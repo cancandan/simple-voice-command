@@ -40,11 +40,20 @@ output_device_index = 20
 ```
 
 `rms_threshold` is the threshold RMS value beyond which the captured audio is considered as signal and recording is started
-`redemption_frames` After the recording has started we begin counting the number of frames (chunks) of audio that fall below the `rms_threshold`. If this number is more than `redemption_frames` we can stop capturing audio. 
+
+`redemption_frames` After the recording has started we begin counting the number of frames (chunks) of audio that fall below the 
+`rms_threshold`. If this number is more than `redemption_frames` we can stop capturing audio. 
+
 `min_speech_frames` We also check that the number of frames exceeding `rms_threshold` is above `min_speech_frames` so that instantaneous noise is not considered as speech.
+
 `prepad_frames` is the number of frames to include, in the final captured audio, before the threshold is exceeded
+
 `chunk` is the number of samples to process in one IO op
+
 `channels` is the number of channels the IO device is using, 1 is mono, 2 is stereo.
+
 `rate` is the sample rate
+
 `n_mfcc` is the number of MFC components to compute
+
 `input_device_index` and `output_device_index` is the device id as reported by pyaudio lib.
