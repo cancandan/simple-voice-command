@@ -10,9 +10,10 @@ This is a command line python application for recognizing voice commands and exe
 2. Make a virtual environment by following the [official instructions](https://docs.python.org/3/library/venv.html), and activate it.
 3. Install the required libraries by `pip install -r requirements.txt`
 4. Run `python svc.py io-select` and follow instructions to check and set input and output device
-5. Run `python svc.py sound-check` and follow instructions to test that you are able to cleanly record your voice. You may need to adjust your mic levels.
-6. Run `python svc.py add-command` and follow instructions to add voice commands
-7. Make a shell script with the command name, for example, if you have added a command called `open`
+5. Adjust the `config.ini` file included in the repository as explained at the bottom of the page.
+6. Run `python svc.py sound-check` and follow instructions to test that you are able to cleanly record your voice. You may need to adjust your mic levels.
+7. Run `python svc.py add-command` and follow instructions to add voice commands
+8. Make a shell script with the command name, for example, if you have added a command called `open`
    Make a shell script named `open.sh` with contents like this:
    ```
    #!/bin/sh
