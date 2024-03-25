@@ -12,7 +12,7 @@ This is a command line python application for recognizing voice commands and exe
 4. Run `python svc.py io-select` and follow instructions to check and set input and output device
 5. Adjust the `config.ini` file included in the repository as explained at the bottom of the page.
 6. Run `python svc.py sound-check` and follow instructions to test that you are able to cleanly record your voice. You may need to revisit step 4 and restart to check. You may also need to adjust your mic levels. 
-7. Run `python svc.py add-command` and follow instructions to add your voice commands.
+7. Run `python svc.py add-command` and follow instructions to add your voice commands. Try adding at least 3 audio examples.
 8. Make a shell script with the command name, for example, if you have added a command called `open`
    Make a shell script named `open.sh` with contents like this:
    ```
