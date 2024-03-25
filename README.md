@@ -1,7 +1,3 @@
-# simple-voice-command
-language agnostic, small footprint, simple voice recognition 
-
-
 ## What is this?
 This is a command line python application for recognizing voice commands and executing actions associated with them.    
 
