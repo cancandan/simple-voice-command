@@ -20,3 +20,6 @@ This is a command line python application for recognizing voice commands and exe
    ```
    Then make it executable via `chmod +x open.sh`
 9. Run `python svc.py recognize` to start the app that will listen for your voice, recognize what you say and execute the associated command.
+
+## How it works?
+When you start the app to recognize your voice, it opens the input audio stream from the input device specified in the configuration file and starts monitoring the RMS of the chunks of signal. When this exceeds a threshold it is considered as voice activity. The capturing of your utterance can be tuned by the configuration paramaters detailed in the next section. Once your utterance is captured, it computes its MFCC(https://en.wikipedia.org/wiki/Mel-frequency_cepstrum) and find its distance to the MFCCs of all the recorded commands by [Dynamic Time Warping (DTW)](https://en.wikipedia.org/wiki/Dynamic_time_warping). The results are sorted by distance. If the top three distances agree it considers it as recognized, otherwise it reports that it is unsure.
