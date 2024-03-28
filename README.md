@@ -8,7 +8,7 @@ This is a command line python application for recognizing voice commands and exe
 4. Run `python svc.py io-select` and follow instructions to check and set input and output device
 5. Adjust the `config.ini` file included in the repository as explained at the bottom of the page.
 6. Run `python svc.py sound-check` and follow instructions to test that you are able to cleanly record your voice. You may need to revisit step 5 and restart to check. You may also need to adjust your mic levels. 
-7. Run `python svc.py add-command` and follow instructions to add your voice commands. Add at least 3 audio examples.
+7. Run `python svc.py add-command` and follow instructions to add your voice commands. Add at least 3 audio examples per command.
 8. Make a shell script with the command name, for example, if you have added a command called `open`
    Make a shell script named `open.sh` with contents like this:
    ```
@@ -16,7 +16,8 @@ This is a command line python application for recognizing voice commands and exe
    echo "open command example"
    ```
    Then make it executable via `chmod +x open.sh`
-9. Run `python svc.py recognize` to start the app that will listen for your voice, recognize what you say and execute the associated command.
+   Here we are just executing the executable file via the python [subprocess](https://docs.python.org/3/library/subprocess.html) module, so just change this part of the code if you need to.
+10. Run `python svc.py recognize` to start the app that will listen for your voice, recognize what you say and execute the associated command.
 
 ## How it works?
 When you start the app to recognize your voice, it opens the input audio stream from the input device specified in the configuration file and starts monitoring the RMS of the chunks of signal. When this exceeds a threshold it is considered as voice activity. The capturing of your utterance can be tuned by the configuration paramaters detailed in the next section. Once your utterance is captured, it computes its [MFCC](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum) and find its distance to the MFCCs of all the recorded commands by [Dynamic Time Warping (DTW)](https://en.wikipedia.org/wiki/Dynamic_time_warping). The results are sorted by distance. If the top three distances agree on the label more than once, it is considered as recognized, otherwise it reports that it is unsure.
