@@ -39,10 +39,10 @@ output_device_index = 20
 
 `rms_threshold` is the threshold RMS value beyond which the captured audio is considered as signal and recording is started
 
-`redemption_frames` After the recording has started we begin counting the number of frames (chunks) of audio that fall below the 
+`redemption_frames` After the recording has started we begin counting the number of frames (chunks) of audio with RMS that fall below the 
 `rms_threshold`. If this number is more than `redemption_frames` we can stop capturing audio. 
 
-`min_speech_frames` We also check that the number of frames exceeding `rms_threshold` is above `min_speech_frames` so that instantaneous noise is not considered as speech.
+`min_speech_frames` We also check that the number of frames with RMS exceeding `rms_threshold` is above `min_speech_frames` so that instantaneous noise is not considered as speech.
 
 `prepad_frames` is the number of frames to include, in the final captured audio, before the threshold is exceeded
 
