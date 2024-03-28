@@ -44,7 +44,7 @@ output_device_index = 20
 
 `min_speech_frames` We also check that the number of frames with RMS exceeding `rms_threshold` is above `min_speech_frames` so that instantaneous noise is not considered as speech.
 
-`prepad_frames` is the number of frames to include, in the final captured audio, before the threshold is exceeded
+`prepad_frames` is the number of frames to include, in the final captured audio, before the RMS threshold has been exceeded
 
 `chunk` is the number of samples to process in one IO op
 
